@@ -216,17 +216,23 @@ func _on_Button_pressed():
 		$CenterContainer2/DayWeek.visible = true
 		$CenterContainer2/DayWeek.text = finaldayString
 		$Text.play("1")
-		var element = {"date":date,"day":finaldayString,"time":time,"answer":"True"}
+		var element = {"date":date,"day":finaldayString,"time":str(stepify(time,.1)),"answer":""}
 		history[str(count)] = element
-		var listTemp = []
+		var listTemp = ["\n"]
 #		print(history)
 		for i in history:
 #			print(history[i])
+#			if history[i].size() > 1:
+#				listTemp.append(" ")
 			for x in history[i]:
 #				print(history[i][x])
 				listTemp.append(history[i][x])
+				listTemp.append('\n')
+#		listTemp = str(listTemp) + '\n'
+		print(listTemp)
 		list = str(listTemp)
 		list = list.replace("[","")
 		list = list.replace("]","")
+		list = list.replace(",","")
 		$UIBAR/Labels/Label1.text = str(list)
 		print(list)
