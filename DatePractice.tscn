@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://DatePractice.gd" type="Script" id=1]
 [ext_resource path="res://Cocola.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://DatePractice.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Cursor.gd" type="Script" id=4]
 [ext_resource path="res://floatycursor.png" type="Texture" id=5]
+[ext_resource path="res://UIBAR.gd" type="Script" id=6]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -74,6 +75,302 @@ outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 50
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 50, 360 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 107.5, 362 )
+
+[sub_resource type="Animation" id=11]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("UIBAR/MainBarTrigger/Enter:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UIBAR/MainBarTrigger/Exit:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("UIBAR/MainBar2:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 721 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("UIBAR/MainBar2/MainBar:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 721 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("UIBAR/MainBarTrigger:monitoring")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "Main"
+tracks/0/type = "value"
+tracks/0/path = NodePath("UIBAR/MainBarTrigger/Enter:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UIBAR/MainBarTrigger/Exit:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("UIBAR/MainBar2:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 4.43828 ),
+"update": 0,
+"values": [ Vector2( 216, 721 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("UIBAR/MainBar2/MainBar:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 4.43828 ),
+"update": 0,
+"values": [ Vector2( 202, 721 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("UIBAR/MainBarTrigger:monitoring")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("UIBAR/MainBar2/MainBar:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 721 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UIBAR/MainBar2:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 721 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "ToIdle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("UIBAR/MainBarTrigger/Enter:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UIBAR/MainBarTrigger/Exit:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("UIBAR/MainBar2/MainBar:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 3.03144 ),
+"update": 0,
+"values": [ Vector2( 202, 721 ), Vector2( 1, 721 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("UIBAR/MainBar2:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 3.03144 ),
+"update": 0,
+"values": [ Vector2( 216, 721 ), Vector2( 1, 721 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("UIBAR/MainBarTrigger:monitoring")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "ToMain"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("UIBAR/MainBarTrigger/Enter:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UIBAR/MainBarTrigger/Exit:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("UIBAR/MainBar2:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 4.43828 ),
+"update": 0,
+"values": [ Vector2( 1, 721 ), Vector2( 216, 721 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("UIBAR/MainBar2/MainBar:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 4.43828 ),
+"update": 0,
+"values": [ Vector2( 1, 721 ), Vector2( 202, 721 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("UIBAR/MainBarTrigger:monitoring")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="CircleShape2D" id=15]
+radius = 63.4209
+
 [node name="DatePractice" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -88,19 +385,6 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
 anims/colors = SubResource( 2 )
-
-[node name="Button" type="Button" parent="."]
-margin_left = 490.0
-margin_top = 407.0
-margin_right = 790.0
-margin_bottom = 457.0
-rect_min_size = Vector2( 300, 50 )
-custom_fonts/font = ExtResource( 3 )
-text = "Generate Date"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Text" type="AnimationPlayer" parent="."]
 anims/1 = SubResource( 4 )
@@ -136,6 +420,78 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+margin_top = 96.0
+margin_right = 1280.0
+margin_bottom = 445.0
+rect_min_size = Vector2( 1280, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DayWeek" type="Label" parent="CenterContainer2"]
+margin_left = 640.0
+margin_top = 150.0
+margin_right = 640.0
+margin_bottom = 199.0
+custom_fonts/font = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 480.0
+margin_top = 445.0
+margin_right = 800.0
+margin_bottom = 495.0
+rect_min_size = Vector2( 320, 50 )
+custom_fonts/font = ExtResource( 3 )
+text = "Generate Date"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UIBAR" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="MainBar2" type="ColorRect" parent="UIBAR"]
+margin_right = 1.0
+margin_bottom = 721.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainBar" type="ColorRect" parent="UIBAR/MainBar2"]
+margin_right = 1.0
+margin_bottom = 721.0
+color = Color( 0.117647, 0.301961, 0.686275, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainBarTrigger" type="Area2D" parent="UIBAR"]
+monitoring = false
+
+[node name="Enter" type="CollisionShape2D" parent="UIBAR/MainBarTrigger"]
+position = Vector2( 52, 360 )
+shape = SubResource( 9 )
+disabled = true
+
+[node name="Exit" type="CollisionShape2D" parent="UIBAR/MainBarTrigger"]
+position = Vector2( 109.5, 362 )
+shape = SubResource( 10 )
+disabled = true
+
+[node name="UI" type="AnimationPlayer" parent="UIBAR"]
+root_node = NodePath("../..")
+anims/Idle = SubResource( 11 )
+anims/Main = SubResource( 12 )
+anims/RESET = SubResource( 13 )
+anims/ToIdle = SubResource( 14 )
+anims/ToMain = SubResource( 8 )
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 640, 272 )
 scale = Vector2( 0.3, 0.3 )
@@ -144,4 +500,13 @@ script = ExtResource( 4 )
 
 [node name="Tween" type="Tween" parent="Sprite"]
 
+[node name="MouseCursor" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/MouseCursor"]
+shape = SubResource( 15 )
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="area_entered" from="UIBAR/MainBarTrigger" to="UIBAR" method="_on_MainBarTrigger_area_entered"]
+[connection signal="area_exited" from="UIBAR/MainBarTrigger" to="UIBAR" method="_on_MainBarTrigger_area_exited"]
+[connection signal="mouse_entered" from="UIBAR/MainBarTrigger" to="UIBAR" method="_on_MainBarTrigger_mouse_entered"]
+[connection signal="mouse_exited" from="UIBAR/MainBarTrigger" to="UIBAR" method="_on_MainBarTrigger_mouse_exited"]

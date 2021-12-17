@@ -18,14 +18,15 @@ func _process(delta):
 		time += delta
 		$DateText2.visible = true
 		$DateText2.text = str(stepify(time,.1))
+		$CenterContainer2/DayWeek.visible = false
 	else:
-		$DateText2.visible = false
-		time = 0
+		$DateText2.visible = true
 
 
 func _on_Button_pressed():
 	print(state)
 	if state == 0 or state == 2:
+		time = 0
 		$Text.play("2")
 		state = 1
 		rng.randomize()
@@ -207,5 +208,6 @@ func _on_Button_pressed():
 			finaldayString = "Saturday"
 	elif state == 1:
 		state = 0
-		$CenterContainer/DateText.text = finaldayString
+		$CenterContainer2/DayWeek.visible = true
+		$CenterContainer2/DayWeek.text = finaldayString
 		$Text.play("1")
