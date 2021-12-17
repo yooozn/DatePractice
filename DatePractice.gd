@@ -6,8 +6,11 @@ var state = 2
 # var b = "text"
 var rng = RandomNumberGenerator.new()
 var finaldayString = ""
-
+var history = {}
 var time = 0
+var count = 0
+var date
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimationPlayer.play("colors")
@@ -26,6 +29,7 @@ func _process(delta):
 func _on_Button_pressed():
 	print(state)
 	if state == 0 or state == 2:
+		count += 1
 		time = 0
 		$Text.play("2")
 		state = 1
@@ -44,7 +48,7 @@ func _on_Button_pressed():
 		var ones
 		var thousandRemainder
 		var tensOnes
-		print(str(day) + "/" + str(month) + "/" + str(year))
+		date = (str(day) + "/" + str(month) + "/" + str(year))
 		$CenterContainer/DateText.text = str(day) + " / " + str(month) + " / " + str(year)
 		if len(str(year)) == 4:
 			leapyear = false
@@ -211,3 +215,7 @@ func _on_Button_pressed():
 		$CenterContainer2/DayWeek.visible = true
 		$CenterContainer2/DayWeek.text = finaldayString
 		$Text.play("1")
+		var element = {"date":date,"day":finaldayString,"time":time,"answer":"True"}
+		history[str(count)] = element
+		print(history)
+		

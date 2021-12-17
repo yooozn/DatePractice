@@ -472,7 +472,6 @@ __meta__ = {
 }
 
 [node name="MainBarTrigger" type="Area2D" parent="UIBAR"]
-monitoring = false
 
 [node name="Enter" type="CollisionShape2D" parent="UIBAR/MainBarTrigger"]
 position = Vector2( 52, 360 )
@@ -482,7 +481,6 @@ disabled = true
 [node name="Exit" type="CollisionShape2D" parent="UIBAR/MainBarTrigger"]
 position = Vector2( 109.5, 362 )
 shape = SubResource( 10 )
-disabled = true
 
 [node name="UI" type="AnimationPlayer" parent="UIBAR"]
 root_node = NodePath("../..")
@@ -508,5 +506,3 @@ shape = SubResource( 15 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="area_entered" from="UIBAR/MainBarTrigger" to="UIBAR" method="_on_MainBarTrigger_area_entered"]
 [connection signal="area_exited" from="UIBAR/MainBarTrigger" to="UIBAR" method="_on_MainBarTrigger_area_exited"]
-[connection signal="mouse_entered" from="UIBAR/MainBarTrigger" to="UIBAR" method="_on_MainBarTrigger_mouse_entered"]
-[connection signal="mouse_exited" from="UIBAR/MainBarTrigger" to="UIBAR" method="_on_MainBarTrigger_mouse_exited"]
