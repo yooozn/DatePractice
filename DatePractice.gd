@@ -7,6 +7,7 @@ var state = 2
 var rng = RandomNumberGenerator.new()
 var finaldayString = ""
 var history = {}
+var list = ""
 var time = 0
 var count = 0
 var date
@@ -217,5 +218,15 @@ func _on_Button_pressed():
 		$Text.play("1")
 		var element = {"date":date,"day":finaldayString,"time":time,"answer":"True"}
 		history[str(count)] = element
-		print(history)
-		
+		var listTemp = []
+#		print(history)
+		for i in history:
+#			print(history[i])
+			for x in history[i]:
+#				print(history[i][x])
+				listTemp.append(history[i][x])
+		list = str(listTemp)
+		list = list.replace("[","")
+		list = list.replace("]","")
+		$UIBAR/Labels/Label1.text = str(list)
+		print(list)
