@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://DatePractice.gd" type="Script" id=1]
 [ext_resource path="res://Cocola.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Cursor.gd" type="Script" id=4]
 [ext_resource path="res://floatycursor.png" type="Texture" id=5]
 [ext_resource path="res://UIBAR.gd" type="Script" id=6]
+[ext_resource path="res://UIBARRIGHT.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -90,7 +91,7 @@ extents = Vector2( 107.5, 362 )
 [sub_resource type="Animation" id=11]
 resource_name = "Idle"
 tracks/0/type = "value"
-tracks/0/path = NodePath("UIBAR/MainBarTrigger/Enter:disabled")
+tracks/0/path = NodePath("UIBARLEFT/MainBarTrigger/Enter:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -102,7 +103,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("UIBAR/MainBarTrigger/Exit:disabled")
+tracks/1/path = NodePath("UIBARLEFT/MainBarTrigger/Exit:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -114,7 +115,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("UIBAR/MainBar2:rect_size")
+tracks/2/path = NodePath("UIBARLEFT/MainBar2:rect_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -126,7 +127,7 @@ tracks/2/keys = {
 "values": [ Vector2( 1, 721 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("UIBAR/MainBar2/MainBar:rect_size")
+tracks/3/path = NodePath("UIBARLEFT/MainBar2/MainBar:rect_size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -138,7 +139,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 721 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("UIBAR/MainBarTrigger:monitoring")
+tracks/4/path = NodePath("UIBARLEFT/MainBarTrigger:monitoring")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -150,7 +151,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("UIBAR/Labels/Label1:modulate")
+tracks/5/path = NodePath("UIBARLEFT/Labels/Label1:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -165,7 +166,7 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=12]
 resource_name = "Main"
 tracks/0/type = "value"
-tracks/0/path = NodePath("UIBAR/MainBarTrigger/Enter:disabled")
+tracks/0/path = NodePath("UIBARLEFT/MainBarTrigger/Enter:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -177,7 +178,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("UIBAR/MainBarTrigger/Exit:disabled")
+tracks/1/path = NodePath("UIBARLEFT/MainBarTrigger/Exit:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -189,7 +190,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("UIBAR/MainBar2:rect_size")
+tracks/2/path = NodePath("UIBARLEFT/MainBar2:rect_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -201,7 +202,7 @@ tracks/2/keys = {
 "values": [ Vector2( 216, 721 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("UIBAR/MainBar2/MainBar:rect_size")
+tracks/3/path = NodePath("UIBARLEFT/MainBar2/MainBar:rect_size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -213,7 +214,7 @@ tracks/3/keys = {
 "values": [ Vector2( 202, 721 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("UIBAR/MainBarTrigger:monitoring")
+tracks/4/path = NodePath("UIBARLEFT/MainBarTrigger:monitoring")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -225,7 +226,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("UIBAR/Labels/Label1:modulate")
+tracks/5/path = NodePath("UIBARLEFT/Labels/Label1:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -240,7 +241,7 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=13]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("UIBAR/MainBar2/MainBar:rect_size")
+tracks/0/path = NodePath("UIBARLEFT/MainBar2/MainBar:rect_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -252,7 +253,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 721 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("UIBAR/MainBar2:rect_size")
+tracks/1/path = NodePath("UIBARLEFT/MainBar2:rect_size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -268,7 +269,7 @@ tracks/1/keys = {
 resource_name = "ToIdle"
 length = 0.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("UIBAR/MainBarTrigger/Enter:disabled")
+tracks/0/path = NodePath("UIBARLEFT/MainBarTrigger/Enter:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -280,7 +281,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("UIBAR/MainBarTrigger/Exit:disabled")
+tracks/1/path = NodePath("UIBARLEFT/MainBarTrigger/Exit:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -292,7 +293,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("UIBAR/MainBar2/MainBar:rect_size")
+tracks/2/path = NodePath("UIBARLEFT/MainBar2/MainBar:rect_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -304,7 +305,7 @@ tracks/2/keys = {
 "values": [ Vector2( 202, 721 ), Vector2( 1, 721 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("UIBAR/MainBar2:rect_size")
+tracks/3/path = NodePath("UIBARLEFT/MainBar2:rect_size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -316,7 +317,7 @@ tracks/3/keys = {
 "values": [ Vector2( 216, 721 ), Vector2( 1, 721 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("UIBAR/MainBarTrigger:monitoring")
+tracks/4/path = NodePath("UIBARLEFT/MainBarTrigger:monitoring")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -328,7 +329,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("UIBAR/Labels/Label1:modulate")
+tracks/5/path = NodePath("UIBARLEFT/Labels/Label1:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -344,7 +345,7 @@ tracks/5/keys = {
 resource_name = "ToMain"
 length = 0.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("UIBAR/MainBarTrigger/Enter:disabled")
+tracks/0/path = NodePath("UIBARLEFT/MainBarTrigger/Enter:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -356,7 +357,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("UIBAR/MainBarTrigger/Exit:disabled")
+tracks/1/path = NodePath("UIBARLEFT/MainBarTrigger/Exit:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -368,7 +369,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("UIBAR/MainBar2:rect_size")
+tracks/2/path = NodePath("UIBARLEFT/MainBar2:rect_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -380,7 +381,7 @@ tracks/2/keys = {
 "values": [ Vector2( 1, 721 ), Vector2( 216, 721 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("UIBAR/MainBar2/MainBar:rect_size")
+tracks/3/path = NodePath("UIBARLEFT/MainBar2/MainBar:rect_size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -392,7 +393,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 721 ), Vector2( 202, 721 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("UIBAR/MainBarTrigger:monitoring")
+tracks/4/path = NodePath("UIBARLEFT/MainBarTrigger:monitoring")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -404,7 +405,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("UIBAR/Labels/Label1:modulate")
+tracks/5/path = NodePath("UIBARLEFT/Labels/Label1:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -427,6 +428,288 @@ size = 30
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=26]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Trigger/Enter:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Trigger/Exit:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BarColors/ColorRect2:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1279, 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BarColors/ColorRect2:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 719 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("BarColors/ColorRect:rect_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 719 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("BarColors/ColorRect:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 737, 2 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "Main"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Trigger/Enter:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Trigger/Exit:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BarColors/ColorRect2:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1279, 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BarColors/ColorRect2:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 216, 719 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("BarColors/ColorRect:rect_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 202, 719 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("BarColors/ColorRect:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 737, 2 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BarColors/ColorRect2:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1279, 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BarColors/ColorRect:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 203, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BarColors/ColorRect:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 202, 719 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BarColors/ColorRect2:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 216, 719 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "ToIdle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Trigger/Enter:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Trigger/Exit:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BarColors/ColorRect2:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1279, 3 ), Vector2( 1279, 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BarColors/ColorRect2:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 216, 719 ), Vector2( 1, 719 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("BarColors/ColorRect:rect_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 202, 719 ), Vector2( 1, 719 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("BarColors/ColorRect:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 737, 2 ), Vector2( 737, 2 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 50, 360 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 106, 360 )
 
 [sub_resource type="CircleShape2D" id=15]
 radius = 63.4209
@@ -451,12 +734,11 @@ anims/1 = SubResource( 4 )
 anims/2 = SubResource( 5 )
 
 [node name="DateText2" type="Label" parent="."]
-margin_left = 1143.0
-margin_top = 31.0
-margin_right = 1176.0
-margin_bottom = 93.0
+margin_left = 623.0
+margin_top = 575.0
+margin_right = 656.0
+margin_bottom = 637.0
 custom_fonts/font = SubResource( 6 )
-text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -512,10 +794,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UIBAR" type="Node2D" parent="."]
+[node name="UIBARLEFT" type="Node2D" parent="."]
 script = ExtResource( 6 )
 
-[node name="MainBar2" type="ColorRect" parent="UIBAR"]
+[node name="MainBar2" type="ColorRect" parent="UIBARLEFT"]
 margin_right = 1.0
 margin_bottom = 721.0
 color = Color( 0, 0, 0, 1 )
@@ -523,7 +805,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainBar" type="ColorRect" parent="UIBAR/MainBar2"]
+[node name="MainBar" type="ColorRect" parent="UIBARLEFT/MainBar2"]
 margin_right = 1.0
 margin_bottom = 721.0
 color = Color( 0.117647, 0.301961, 0.686275, 1 )
@@ -531,20 +813,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainBarTrigger" type="Area2D" parent="UIBAR"]
-monitoring = false
+[node name="MainBarTrigger" type="Area2D" parent="UIBARLEFT"]
 
-[node name="Enter" type="CollisionShape2D" parent="UIBAR/MainBarTrigger"]
+[node name="Enter" type="CollisionShape2D" parent="UIBARLEFT/MainBarTrigger"]
 position = Vector2( 52, 360 )
 shape = SubResource( 9 )
 disabled = true
 
-[node name="Exit" type="CollisionShape2D" parent="UIBAR/MainBarTrigger"]
+[node name="Exit" type="CollisionShape2D" parent="UIBARLEFT/MainBarTrigger"]
 position = Vector2( 109.5, 362 )
 shape = SubResource( 10 )
-disabled = true
 
-[node name="UI" type="AnimationPlayer" parent="UIBAR"]
+[node name="UI" type="AnimationPlayer" parent="UIBARLEFT"]
 root_node = NodePath("../..")
 anims/Idle = SubResource( 11 )
 anims/Main = SubResource( 12 )
@@ -552,13 +832,13 @@ anims/RESET = SubResource( 13 )
 anims/ToIdle = SubResource( 14 )
 anims/ToMain = SubResource( 8 )
 
-[node name="Labels" type="Node2D" parent="UIBAR"]
+[node name="Labels" type="Node2D" parent="UIBARLEFT"]
 
-[node name="Label1" type="RichTextLabel" parent="UIBAR/Labels"]
+[node name="Label1" type="RichTextLabel" parent="UIBARLEFT/Labels"]
 margin_left = 12.0
 margin_top = -16.0
 margin_right = 216.0
-margin_bottom = 675.0
+margin_bottom = 716.0
 rect_min_size = Vector2( 180, 100 )
 rect_clip_content = false
 custom_fonts/normal_font = SubResource( 16 )
@@ -567,12 +847,69 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="UIBAR/Labels"]
+[node name="Label" type="Label" parent="UIBARLEFT/Labels"]
 margin_top = 11.0
 margin_right = 200.0
 margin_bottom = 711.0
 rect_min_size = Vector2( 180, 700 )
 custom_fonts/font = SubResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UIBARRIGHT" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="Labels" type="Node2D" parent="UIBARRIGHT"]
+
+[node name="Label1" type="RichTextLabel" parent="UIBARRIGHT/Labels"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI" type="AnimationPlayer" parent="UIBARRIGHT"]
+anims/Idle = SubResource( 26 )
+anims/Main = SubResource( 27 )
+anims/RESET = SubResource( 25 )
+anims/ToIdle = SubResource( 28 )
+
+[node name="Trigger" type="Area2D" parent="UIBARRIGHT"]
+visible = false
+
+[node name="Enter" type="CollisionShape2D" parent="UIBARRIGHT/Trigger"]
+position = Vector2( 1224, 363 )
+shape = SubResource( 22 )
+disabled = true
+
+[node name="Exit" type="CollisionShape2D" parent="UIBARRIGHT/Trigger"]
+position = Vector2( 1168, 363 )
+shape = SubResource( 23 )
+disabled = true
+
+[node name="BarColors" type="Node2D" parent="UIBARRIGHT"]
+
+[node name="ColorRect2" type="ColorRect" parent="UIBARRIGHT/BarColors"]
+margin_left = 1279.0
+margin_top = 3.0
+margin_right = 1495.0
+margin_bottom = 722.0
+rect_min_size = Vector2( 1, 716 )
+rect_scale = Vector2( -1, 1 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UIBARRIGHT/BarColors"]
+margin_left = 203.0
+margin_right = 405.0
+margin_bottom = 719.0
+rect_min_size = Vector2( 1, 716 )
+rect_scale = Vector2( -1, 1 )
+rect_pivot_offset = Vector2( 271, 442 )
+color = Color( 0.352941, 0.839216, 0.45098, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -591,5 +928,5 @@ script = ExtResource( 4 )
 shape = SubResource( 15 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="area_entered" from="UIBAR/MainBarTrigger" to="UIBAR" method="_on_MainBarTrigger_area_entered"]
-[connection signal="area_exited" from="UIBAR/MainBarTrigger" to="UIBAR" method="_on_MainBarTrigger_area_exited"]
+[connection signal="area_entered" from="UIBARLEFT/MainBarTrigger" to="UIBARLEFT" method="_on_MainBarTrigger_area_entered"]
+[connection signal="area_exited" from="UIBARLEFT/MainBarTrigger" to="UIBARLEFT" method="_on_MainBarTrigger_area_exited"]
