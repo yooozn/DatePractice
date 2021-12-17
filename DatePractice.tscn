@@ -149,6 +149,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("UIBAR/Labels/Label1:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=12]
 resource_name = "Main"
@@ -211,6 +223,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("UIBAR/Labels/Label1:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -303,6 +327,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("UIBAR/Labels/Label1:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "ToMain"
@@ -366,6 +402,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("UIBAR/Labels/Label1:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="DynamicFont" id=16]
@@ -484,6 +532,7 @@ __meta__ = {
 }
 
 [node name="MainBarTrigger" type="Area2D" parent="UIBAR"]
+monitoring = false
 
 [node name="Enter" type="CollisionShape2D" parent="UIBAR/MainBarTrigger"]
 position = Vector2( 52, 360 )
@@ -493,6 +542,7 @@ disabled = true
 [node name="Exit" type="CollisionShape2D" parent="UIBAR/MainBarTrigger"]
 position = Vector2( 109.5, 362 )
 shape = SubResource( 10 )
+disabled = true
 
 [node name="UI" type="AnimationPlayer" parent="UIBAR"]
 root_node = NodePath("../..")
@@ -507,7 +557,7 @@ anims/ToMain = SubResource( 8 )
 [node name="Label1" type="RichTextLabel" parent="UIBAR/Labels"]
 margin_left = 12.0
 margin_top = -16.0
-margin_right = 192.0
+margin_right = 216.0
 margin_bottom = 675.0
 rect_min_size = Vector2( 180, 100 )
 rect_clip_content = false
