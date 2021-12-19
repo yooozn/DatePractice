@@ -52,7 +52,6 @@ func _on_Button_pressed():
 		date = (str(day) + "/" + str(month) + "/" + str(year))
 		$CenterContainer/DateText.text = str(day) + " / " + str(month) + " / " + str(year)
 		if len(str(year)) == 4:
-			leapyear = false
 			thousands = int(str(year)[0]) * 1000
 			hundreds = int(str(year)[1]) * 100
 			tens = int(str(year)[2]) * 10
@@ -74,13 +73,12 @@ func _on_Button_pressed():
 				else:
 					startNum = 0
 					# print("Thousand Remainder is 100")
-			var tensOnesRemainder = (tensOnes + int(floor(tensOnes / 4))) % 7
+			var tensOnesRemainder = (tensOnes + int(floor(tensOnes / 4))) % 7 # 68 + 17 = 85 = 1
 			if tensOnes % 4 == 0:
 				leapyear = true
 			else:
 				leapyear = false
-
-			startNum = startNum + tensOnesRemainder
+			startNum = startNum + tensOnesRemainder # 3
 			# print("TensOnes Remainder: " + str(tensOnesRemainder))
 			# print("Start Num final: " + str(startNum))
 		elif len(str(year)) == 3:
@@ -184,9 +182,9 @@ func _on_Button_pressed():
 		else:
 			targetday = 12
 		# print("Target Day: " + str(targetday))
-		dayRemainder = (day - targetday) % 7
+		dayRemainder = posmod((day - targetday),7) ##### -4
 		# print("Day Remainder: " + str(dayRemainder))
-		finalDay = abs((dayRemainder + startNum) % 7)
+		finalDay = abs(posmod((dayRemainder + startNum),7))
 		# print("Final day: " + str(finalDay))
 		if finalDay == 0:
 			print("Sunday")
@@ -203,11 +201,9 @@ func _on_Button_pressed():
 		elif finalDay == 4:
 			print("Thursday")
 			finaldayString = "Thursday"
-			
 		elif finalDay == 5:
 			print("Friday")
 			finaldayString = "Friday"
-			
 		else:
 			print("Saturday")
 			finaldayString = "Saturday"
@@ -234,5 +230,5 @@ func _on_Button_pressed():
 		list = list.replace("[","")
 		list = list.replace("]","")
 		list = list.replace(",","")
-		$UIBAR/Labels/Label1.text = str(list)
+		$UIBARLEFT/Labels/Label1.text = str(list)
 		print(list)
