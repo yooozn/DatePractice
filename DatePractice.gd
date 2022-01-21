@@ -16,6 +16,8 @@ var date
 func _ready():
 	$AnimationPlayer.play("colors")
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Settings.date = true
+	$UIBARRIGHT/DAhighlight.visible = true
 
 func _process(delta):
 	if state == 1:

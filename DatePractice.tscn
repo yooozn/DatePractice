@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://DatePractice.gd" type="Script" id=1]
 [ext_resource path="res://Cocola.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://floatycursor.png" type="Texture" id=5]
 [ext_resource path="res://UIBAR.gd" type="Script" id=6]
 [ext_resource path="res://UIBARRIGHT.gd" type="Script" id=7]
+[ext_resource path="res://SceneChangeButtons.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Mhighlight.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -411,7 +413,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.3 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -503,6 +505,30 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 737, 2 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Buttons:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("DAhighlight:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=27]
 resource_name = "Main"
@@ -578,6 +604,30 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 737, 2 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Buttons:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("DAhighlight:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=25]
 length = 0.001
@@ -628,6 +678,30 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 216, 719 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Buttons:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("DAhighlight:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=28]
@@ -705,6 +779,30 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 737, 2 ), Vector2( 737, 2 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Buttons:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("DAhighlight:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=29]
 resource_name = "ToMain"
@@ -780,6 +878,30 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 737, 2 ), Vector2( 737, 2 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Buttons:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("DAhighlight:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=22]
@@ -890,10 +1012,12 @@ __meta__ = {
 }
 
 [node name="MainBarTrigger" type="Area2D" parent="UIBARLEFT"]
+monitoring = false
 
 [node name="Enter" type="CollisionShape2D" parent="UIBARLEFT/MainBarTrigger"]
 position = Vector2( 52, 360 )
 shape = SubResource( 9 )
+disabled = true
 
 [node name="Exit" type="CollisionShape2D" parent="UIBARLEFT/MainBarTrigger"]
 position = Vector2( 109.5, 362 )
@@ -990,6 +1114,31 @@ color = Color( 0.352941, 0.839216, 0.45098, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Mhighlight" parent="UIBARRIGHT" instance=ExtResource( 9 )]
+
+[node name="Dhighlight" type="ColorRect" parent="UIBARRIGHT"]
+visible = false
+margin_left = 1078.0
+margin_top = 121.0
+margin_right = 1292.0
+margin_bottom = 173.0
+color = Color( 0.980392, 0.996078, 0.356863, 0.729412 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DAhighlight" type="ColorRect" parent="UIBARRIGHT"]
+margin_left = 1078.0
+margin_top = 185.0
+margin_right = 1292.0
+margin_bottom = 237.0
+color = Color( 0.980392, 0.996078, 0.356863, 0.729412 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" parent="UIBARRIGHT" instance=ExtResource( 8 )]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 640, 272 )
