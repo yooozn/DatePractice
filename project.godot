@@ -14,6 +14,10 @@ config/name="DatePractice"
 run/main_scene="res://DatePractice.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Settings="*res://Settings.gd"
+
 [display]
 
 window/size/width=1280
