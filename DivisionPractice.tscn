@@ -25,6 +25,7 @@ var count = 0
 var digitNum1 = 2
 var digitNum2 = 1
 var answer = \"\"
+var question = \"\"
 var mode
 
 # Called when the node enters the scene tree for the first time.
@@ -50,9 +51,9 @@ func _process(delta):
 		$CenterContainer2/DayWeek.visible = false
 	else:
 		$DateText2.visible = true
-	if Input.is_key_pressed(KEY_1):
-		Transition._transition()
-	print($MHighlight.visible)
+#	if Input.is_key_pressed(KEY_1):
+#		Transition._transition()
+#	print($MHighlight.visible)
 
 
 func _on_Button_pressed():
@@ -77,9 +78,11 @@ func _on_Button_pressed():
 		if mode == \"division\":
 			answer = str(float(num1) / num2)
 			$CenterContainer/DateText.text = str(num1) + \" / \" + str(num2)
+			question = str(num1) + \" / \" + str(num2)
 		elif mode == \"multiplication\":
 			answer = str(float(num1) * num2)
 			$CenterContainer/DateText.text = str(num1) + \" * \" + str(num2)
+			question = str(num1) + \" * \" + str(num2)
 	elif state == 1:
 		state = 0
 		print(answer)
@@ -108,6 +111,50 @@ func _on_Button_pressed():
 #		list = list.replace(\",\",\"\")
 #		$UIBARLEFT/Labels/Label1.text = str(list)
 #		print(list)
+		$Text.play(\"1\")
+		var element = {\"date\":question,\"day\":answer,\"time\":str(stepify(time,.1)),\"answer\":\"\"}
+		history[str(count)] = element
+		var listTemp = [\"\\n\"]
+#		print(history)
+		for i in history:
+#			print(history[i])
+#			if history[i].size() > 1:
+#				listTemp.append(\" \")
+			for x in history[i]:
+#				print(history[i][x])
+				listTemp.append(history[i][x])
+				listTemp.append('\\n')
+#		listTemp = str(listTemp) + '\\n'
+		print(listTemp)
+		list = str(listTemp)
+		list = list.replace(\"[\",\"\")
+		list = list.replace(\"]\",\"\")
+		list = list.replace(\",\",\"\")
+		$UIBARLEFT/Labels/Label1.text = str(list)
+		print(list)
+
+
+func _on_Increase1_pressed():
+	if digitNum2 >= 1:
+		digitNum1 += 1
+		$UIBARRIGHT/Digits/Num1.text = str(digitNum1)
+
+
+func _on_Decrease1_pressed():
+	if digitNum1 > 1:
+		digitNum1 -= 1
+		$UIBARRIGHT/Digits/Num1.text = str(digitNum1)
+
+func _on_Increase2_pressed():
+	if digitNum2 >= 1:
+		digitNum2 += 1
+		$UIBARRIGHT/Digits/Num2.text = str(digitNum2)
+
+
+func _on_Decrease2_pressed():
+	if digitNum2 > 1:
+		digitNum2 -= 1
+		$UIBARRIGHT/Digits/Num2.text = str(digitNum2)
 "
 
 [sub_resource type="Animation" id=1]
@@ -641,6 +688,18 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Digits:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=27]
 resource_name = "Main"
@@ -752,6 +811,18 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Digits:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=25]
 length = 0.001
@@ -838,6 +909,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Digits:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=28]
@@ -951,6 +1034,18 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Digits:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=29]
 resource_name = "ToMain"
@@ -1058,6 +1153,18 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Digits:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -1273,6 +1380,82 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Digits" type="Node2D" parent="UIBARRIGHT"]
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="Digits" type="Label" parent="UIBARRIGHT/Digits"]
+margin_left = 1128.0
+margin_top = 400.0
+margin_right = 1235.0
+margin_bottom = 439.0
+custom_fonts/font = ExtResource( 3 )
+text = "digits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Num1" type="Label" parent="UIBARRIGHT/Digits"]
+margin_left = 1160.0
+margin_top = 496.0
+margin_right = 1200.0
+margin_bottom = 535.0
+custom_fonts/font = ExtResource( 3 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Increase1" type="Button" parent="UIBARRIGHT/Digits/Num1"]
+margin_left = 48.0
+margin_right = 77.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+text = "+"
+flat = true
+
+[node name="Decrease1" type="Button" parent="UIBARRIGHT/Digits/Num1"]
+margin_left = -48.0
+margin_right = -24.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+text = "-"
+flat = true
+
+[node name="Num2" type="Label" parent="UIBARRIGHT/Digits"]
+margin_left = 1168.0
+margin_top = 576.0
+margin_right = 1208.0
+margin_bottom = 615.0
+custom_fonts/font = ExtResource( 3 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Increase2" type="Button" parent="UIBARRIGHT/Digits/Num2"]
+margin_left = 40.0
+margin_top = -4.0
+margin_right = 69.0
+margin_bottom = 41.0
+custom_fonts/font = ExtResource( 3 )
+text = "+"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Decrease2" type="Button" parent="UIBARRIGHT/Digits/Num2"]
+margin_left = -56.0
+margin_top = -5.0
+margin_right = -32.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 3 )
+text = "-"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Dhighlight" parent="." instance=ExtResource( 8 )]
 visible = true
 margin_top = 120.0
@@ -1302,3 +1485,7 @@ shape = SubResource( 15 )
 [connection signal="area_exited" from="UIBARLEFT/MainBarTrigger" to="UIBARLEFT" method="_on_MainBarTrigger_area_exited"]
 [connection signal="area_entered" from="UIBARRIGHT/Trigger" to="UIBARRIGHT" method="_on_Trigger_area_entered"]
 [connection signal="area_exited" from="UIBARRIGHT/Trigger" to="UIBARRIGHT" method="_on_Trigger_area_exited"]
+[connection signal="pressed" from="UIBARRIGHT/Digits/Num1/Increase1" to="." method="_on_Increase1_pressed"]
+[connection signal="pressed" from="UIBARRIGHT/Digits/Num1/Decrease1" to="." method="_on_Decrease1_pressed"]
+[connection signal="pressed" from="UIBARRIGHT/Digits/Num2/Increase2" to="." method="_on_Increase2_pressed"]
+[connection signal="pressed" from="UIBARRIGHT/Digits/Num2/Decrease2" to="." method="_on_Decrease2_pressed"]
