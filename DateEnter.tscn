@@ -1,12 +1,260 @@
 [gd_scene load_steps=31 format=2]
 
-[ext_resource path="res://DatePractice.gd" type="Script" id=1]
 [ext_resource path="res://Cocola.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://DatePractice.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Cursor.gd" type="Script" id=4]
 [ext_resource path="res://floatycursor.png" type="Texture" id=5]
 [ext_resource path="res://UIBAR.gd" type="Script" id=6]
 [ext_resource path="res://UIBARRIGHT.gd" type="Script" id=7]
+
+[sub_resource type="GDScript" id=30]
+script/source = "extends Node2D
+
+var state = 2
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+var rng = RandomNumberGenerator.new()
+var finaldayString = \"\"
+var history = {}
+var list = \"\"
+var time = 0
+var count = 0
+var date
+var dateEntered = \"\"
+var dateEnteredDictionary = []
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$AnimationPlayer.play(\"colors\")
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+func _process(delta):
+	if state == 1:
+		time += delta
+		$DateText2.visible = true
+		$DateText2.text = str(stepify(time,.1))
+		$CenterContainer2/DayWeek.visible = false
+	else:
+		$DateText2.visible = true
+
+
+func _on_Button_pressed():
+	if dateEnteredDictionary.size() > 2:
+		print(state)
+		print(dateEntered)
+		if state == 0 or state == 2:
+			count += 1
+			time = 0
+			$Text.play(\"2\")
+			state = 1
+			rng.randomize()
+			var year = int(dateEnteredDictionary[2])
+			var month = int(dateEnteredDictionary[1])
+			var day = int(dateEnteredDictionary[0])
+			var dayRemainder
+			var targetday
+			var finalDay
+			var startNum = 2
+			var leapyear = false
+			var thousands
+			var hundreds
+			var tens
+			var ones
+			var thousandRemainder
+			var tensOnes
+			date = (str(day) + \"/\" + str(month) + \"/\" + str(year))
+			$CenterContainer/DateText.text = str(day) + \" / \" + str(month) + \" / \" + str(year)
+			if len(str(year)) == 4:
+				thousands = int(str(year)[0]) * 1000
+				hundreds = int(str(year)[1]) * 100
+				tens = int(str(year)[2]) * 10
+				ones = int(str(year)[3])
+				thousandRemainder = (thousands + hundreds) % 400
+				tensOnes = tens + ones
+				# print(thousands)
+				# print(hundreds)
+				# print(tens)
+				# print(ones)
+				# print(thousands % 400)
+				if thousandRemainder != 0:
+					if thousandRemainder == 300:
+						startNum = 3
+						# print(\"Thousand Remainder is 300\")
+					elif thousandRemainder == 200:
+						startNum = 5
+						# print(\"Thousand Remainder is 200\")
+					else:
+						startNum = 0
+						# print(\"Thousand Remainder is 100\")
+				var tensOnesRemainder = (tensOnes + int(floor(tensOnes / 4))) % 7 # 68 + 17 = 85 = 1
+				if tensOnes % 4 == 0:
+					leapyear = true
+				else:
+					leapyear = false
+				startNum = startNum + tensOnesRemainder # 3
+				# print(\"TensOnes Remainder: \" + str(tensOnesRemainder))
+				# print(\"Start Num final: \" + str(startNum))
+			elif len(str(year)) == 3:
+				leapyear = false
+				startNum = 2
+				hundreds = int(str(year)[0]) * 100
+				tens = int(str(year)[1]) * 10
+				ones = int(str(year)[2])
+				thousandRemainder = hundreds % 400
+				tensOnes = tens + ones
+				# print(thousands)
+				# print(hundreds)
+				# print(tens)
+				# print(ones)
+				# print(thousands % 400)
+				if thousandRemainder != 0:
+					if thousandRemainder == 300:
+						startNum = 3
+						# print(\"Thousand Remainder is 300\")
+					elif thousandRemainder == 200:
+						startNum = 5
+						# print(\"Thousand Remainder is 200\")
+					else:
+						startNum = 0
+						# print(\"Thousand Remainder is 100\")
+				var tensOnesRemainder = (tensOnes + int(floor(tensOnes / 4))) % 7
+				if tensOnes % 4 == 0:
+					leapyear = true
+				else:
+					leapyear = false
+
+				# print(\"Start Num Start: \" + str(startNum))
+				startNum = startNum + tensOnesRemainder
+				# print(\"TensOnes Remainder: \" + str(tensOnesRemainder))
+				# print(\"Start Num final: \" + str(startNum))
+			elif len(str(year)) == 2:
+				leapyear = false
+				startNum = 2
+				tens = int(str(year)[0]) * 10
+				ones = int(str(year)[1])
+				tensOnes = tens + ones
+				# print(thousands)
+				# print(hundreds)
+				# print(tens)
+				# print(ones)
+				# print(thousands % 400)
+				var tensOnesRemainder = (tensOnes + int(floor(tensOnes / 4))) % 7
+				if tensOnes % 4 == 0:
+					leapyear = true
+				else:
+					leapyear = false
+				# print(\"Start Num Start: \" + str(startNum))
+				startNum = startNum + tensOnesRemainder
+				# print(\"TensOnes Remainder: \" + str(tensOnesRemainder))
+				# print(\"Start Num final: \" + str(startNum))
+			elif len(str(year)) == 1:
+				leapyear = false
+				startNum = 2
+				ones = int(str(year)[0])
+				tensOnes = ones
+				# print(thousands)
+				# print(hundreds)
+				# print(tens)
+				# print(ones)
+				# print(thousands % 400)
+				var tensOnesRemainder = (tensOnes + int(floor(tensOnes / 4))) % 7
+				if tensOnes % 4 == 0:
+					leapyear = true
+				else:
+					leapyear = false
+				startNum = startNum + tensOnesRemainder
+
+			if month == 1:
+				if leapyear == true:
+					targetday = 4
+				else:
+					targetday = 3
+			elif month == 2:
+				if leapyear == true:
+					targetday = 29
+				else:
+					targetday = 28
+			elif month == 3:
+				targetday = 14
+			elif month == 4:
+				targetday = 4
+			elif month == 5:
+				targetday = 9
+			elif month == 6:
+				targetday = 6
+			elif month == 7:
+				targetday = 11
+			elif month == 8:
+				targetday = 8
+			elif month == 9:
+				targetday = 5
+			elif month == 10:
+				targetday = 10
+			elif month == 11:
+				targetday = 7
+			else:
+				targetday = 12
+			# print(\"Target Day: \" + str(targetday))
+			dayRemainder = posmod((day - targetday),7) ##### -4
+			# print(\"Day Remainder: \" + str(dayRemainder))
+			finalDay = abs(posmod((dayRemainder + startNum),7))
+			# print(\"Final day: \" + str(finalDay))
+			if finalDay == 0:
+				print(\"Sunday\")
+				finaldayString = \"Sunday\"
+			elif finalDay == 1:
+				print(\"Monday\")
+				finaldayString = \"Monday\"
+			elif finalDay == 2:
+				print(\"Tuesday\")
+				finaldayString = \"Tuesday\"
+			elif finalDay == 3:
+				print(\"Wednesday\")
+				finaldayString = \"Wednesday\"
+			elif finalDay == 4:
+				print(\"Thursday\")
+				finaldayString = \"Thursday\"
+			elif finalDay == 5:
+				print(\"Friday\")
+				finaldayString = \"Friday\"
+			else:
+				print(\"Saturday\")
+				finaldayString = \"Saturday\"
+		elif state == 1:
+			state = 0
+			$CenterContainer2/DayWeek.visible = true
+			$CenterContainer2/DayWeek.text = finaldayString
+			$Text.play(\"1\")
+			var element = {\"date\":date,\"day\":finaldayString,\"time\":str(stepify(time,.1)),\"answer\":\"\"}
+			history[str(count)] = element
+			var listTemp = [\"\\n\"]
+	#		print(history)
+			for i in history:
+	#			print(history[i])
+	#			if history[i].size() > 1:
+	#				listTemp.append(\" \")
+				for x in history[i]:
+	#				print(history[i][x])
+					listTemp.append(history[i][x])
+					listTemp.append('\\n')
+	#		listTemp = str(listTemp) + '\\n'
+			print(listTemp)
+			list = str(listTemp)
+			list = list.replace(\"[\",\"\")
+			list = list.replace(\"]\",\"\")
+			list = list.replace(\",\",\"\")
+			$UIBARLEFT/Labels/Label1.text = str(list)
+			print(list)
+
+func _on_LineEdit_text_changed(new_text):
+	dateEntered = str(new_text)
+
+
+func _on_LineEdit_text_entered(new_text):
+	dateEnteredDictionary = dateEntered.split(\"/\")
+	print(dateEntered)
+"
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -792,7 +1040,7 @@ extents = Vector2( 106, 360 )
 radius = 63.4209
 
 [node name="DatePractice" type="Node2D"]
-script = ExtResource( 1 )
+script = SubResource( 30 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1279.0
@@ -958,7 +1206,6 @@ anims/ToMain = SubResource( 29 )
 [node name="Enter" type="CollisionShape2D" parent="UIBARRIGHT/Trigger"]
 position = Vector2( 1224, 363 )
 shape = SubResource( 22 )
-disabled = true
 
 [node name="Exit" type="CollisionShape2D" parent="UIBARRIGHT/Trigger"]
 position = Vector2( 1168, 363 )
@@ -1004,8 +1251,19 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/MouseCursor"]
 shape = SubResource( 15 )
 
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 506.0
+margin_top = 523.0
+margin_right = 762.0
+margin_bottom = 573.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="area_entered" from="UIBARLEFT/MainBarTrigger" to="UIBARLEFT" method="_on_MainBarTrigger_area_entered"]
 [connection signal="area_exited" from="UIBARLEFT/MainBarTrigger" to="UIBARLEFT" method="_on_MainBarTrigger_area_exited"]
 [connection signal="area_entered" from="UIBARRIGHT/Trigger" to="UIBARRIGHT" method="_on_Trigger_area_entered"]
 [connection signal="area_exited" from="UIBARRIGHT/Trigger" to="UIBARRIGHT" method="_on_Trigger_area_exited"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
